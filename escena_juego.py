@@ -1,4 +1,14 @@
 # -*- encoding: utf-8 -*-
+#
+#  MEMO-Huayra es un fork de Memorice desarrollado para Huayra-gnu/linux
+#  2013
+#  Desarrolladores:
+#     Mercedes Elgarte
+#     Héctor Sanchez
+#     Diego Accorinti
+#
+# license: lgplv3 (see http://www.gnu.org/licenses/lgpl.html)
+#
 # For pilas engine - a video game framework.
 #
 # copyright 2011 - Pablo Garrido
@@ -109,7 +119,7 @@ class Juego(pilas.escena.Base):
         self.nivel = nivel
         self.estado = True
 
-        self.tiempo = 0.5
+        self.tiempo = 1
         
         self.area = self.columnas * self.filas
 
@@ -272,8 +282,16 @@ class Juego(pilas.escena.Base):
                         if self.intentos[0][0] == c: 
                             boton_x = encontrar_boton_x(c)
                             boton_x2 = encontrar_boton_x(c + '2')
-                            pilas.mundo.agregar_tarea_una_vez(self.tiempo, borrar_ficha_x, boton_x, boton_x2)
+                            pilas.mundo.agregar_tarea_una_vez(2, borrar_ficha_x, boton_x, boton_x2)
+                            aplicaciones = {"a" : "Primeros pasos en Huayra","b" : "Pilas Engine","c" : "Gimp",
+"d" : "Clementine","e" : "CD Pedia","f" : "Huayra Identinet",
+"g" : "Gambas 3","h" : "Icaro","i" : "Chromium",
+"j" : "Pidgin","k" : "Televisión Digital Abierta","l" : "Libre Office Calc",
+"m" : "Libre Office Writer","n" : "Inskape","o" : "VLC",
+"p" : "Ayni","q" : "Blender","r" : "Anagramarama",
+"s" : "Avogadro","t" : "Audacity","u" : "Pluma"}
 
+                            pilas.avisar("Bien! " + aplicaciones[c],2)
                 self.estado = False
             else:
             # si no son pares
@@ -289,7 +307,7 @@ class Juego(pilas.escena.Base):
                     self.botones[i].primera_vez_presionado = False
                     self.estado = False
                     pilas.mundo.agregar_tarea_una_vez(self.tiempo, pintar_normal_ficha_x, self.botones[i])
-                
+
             self.intentos.pop()
             self.intentos.pop()
 

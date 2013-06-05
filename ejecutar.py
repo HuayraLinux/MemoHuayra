@@ -1,4 +1,13 @@
 # -*- encoding: utf-8 -*-
+#  MEMO-Huayra es un fork de Memorice desarrollado para Huayra-gnu/linux
+#  2013
+#  Desarrolladores:
+#     Mercedes Elgarte
+#     Héctor Sanchez
+#     Diego Accorinti
+#
+# license: lgplv3 (see http://www.gnu.org/licenses/lgpl.html)
+
 # For pilas engine - a video game framework.
 #
 # copyright 2011 - Pablo Garrido
@@ -8,7 +17,7 @@
 
 import pilas
 
-pilas.iniciar(titulo = "Memorice")
+pilas.iniciar(titulo = "MEMO-Huayra")
 
 
 
